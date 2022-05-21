@@ -64,7 +64,7 @@ class Solutions
        Node cur=head;
        Node prev=null;
        while(cur!=null){
-           Node temp=head;
+           Node temp=cur.next;
            cur.next=prev;
            prev=cur;
            cur=temp;
