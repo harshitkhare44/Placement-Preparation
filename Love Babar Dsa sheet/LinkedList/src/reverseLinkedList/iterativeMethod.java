@@ -1,18 +1,10 @@
+package reverseLinkedList;
 // { Driver Code Starts
 import java.util.*;
 import java.io.*;
 
-class Node{
-    int data;
-    Node next;
 
-    Node(int x){
-        data = x;
-        next = null;
-    }
-
-}
-class GFG{
+class GFGs{
     static void printList(Node node)
     {
         while (node != null)
@@ -64,19 +56,20 @@ class Node {
 
 */
 
-class Solution
+class Solutions
 {
     //Function to reverse a linked list.
     Node reverseList(Node head)
     {
-        // code here
-        if(head==null || head.next==null)
-            return head;
+       Node cur=head;
+       Node prev=null;
+       while(cur!=null){
+           Node temp=head;
+           cur.next=prev;
+           prev=cur;
+           cur=temp;
 
-        Node newHead=reverseList(head.next);
-        Node Headnext=head.next;
-        Headnext.next=head;
-        head.next=null;
-        return newHead;
+       }
+       return prev;
     }
 }
